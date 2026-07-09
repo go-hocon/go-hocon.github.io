@@ -1,0 +1,27 @@
+baseURL = "https://go-hocon.github.io/"
+title = "go-hocon"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[params.phases]]
+  name = "Lexer & parser"
+  status = "ready"
+  blurb = "Unquoted keys and strings, `=` / `:`, optional commas and root braces, `#` and `//` comments, dotted-path keys, triple-quoted strings and unicode escapes — the full HOCON surface over JSON."
+[[params.phases]]
+  name = "Merging & concatenation"
+  status = "ready"
+  blurb = "Deep object merge of duplicate keys, array and value concatenation, and `+=` self-append, applied as the tree is built."
+[[params.phases]]
+  name = "Substitutions"
+  status = "ready"
+  blurb = "`${path}` and optional `${?path}` substitutions with environment fallback and self-reference, resolved after the whole tree is assembled."
+[[params.phases]]
+  name = "Includes & environment seams"
+  status = "ready"
+  blurb = "`include` directives and environment lookups run through injectable `WithIncludeResolver` / `WithEnv` seams — no filesystem or process environment needed, in production or in tests."
+[[params.phases]]
+  name = "Typed access & rendering"
+  status = "ready"
+  blurb = "`GetString` / `GetInt` / `GetFloat` / `GetBool` / `GetDuration` / `GetBytes` / `GetList` / `GetObject` / `GetOrElse` / `HasPath` over dotted paths, `WithFallback`, and `Render` back to HOCON or JSON."
