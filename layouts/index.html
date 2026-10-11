@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{{/* Dark Reader repaints pages that already draw their own dark theme, as this one does: ask it to stand aside. */}}
+<meta name="darkreader-lock">
 <title>{{ .Site.Title }} — HOCON / Typesafe Config parser in pure Go, no cgo</title>
 <meta name="description" content="go-hocon — a pure-Go (CGO_ENABLED=0) HOCON parser: a JSON superset with substitutions, includes, deep merge, self-append and duration / size units, plus typed accessors.">
 <style>
